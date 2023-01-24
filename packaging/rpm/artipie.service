@@ -1,0 +1,14 @@
+[Unit]
+Description=Artipie Repository Server
+After=syslog.target network.target
+
+[Service]
+SyslogIdentifier=artipie
+User=artipie
+Group=artipie
+ExecStart=/usr/bin/java -jar /opt/artipie/artipie.jar --config-file=/etc/artipie.yml --port=8080 --api-port=8081
+WorkingDirectory=/var/artipie
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -37,6 +37,11 @@ jobs:
           release_name: Release ${{ env.RELEASE_VERSION }}
           draft: false
           prerelease: false
+      # ${{ github.ref_name }} # or GITHUB_REF_NAME - current tag
+      - name: Package to RPM
+        run: rpmbuild -bb --build-in-place packaging/rpm/artipie.spec
+      - run: rpmlint artipie-*.rpm
+      - run: repoquery -l artipie
   # run-benchmarks:
   #   runs-on: ubuntu-latest
   #   needs: docker-publish
