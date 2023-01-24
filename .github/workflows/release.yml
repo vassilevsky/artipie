@@ -1,10 +1,9 @@
-name: Release Docker images
 on:
   push:
     tags:
       - "v*"
 jobs:
-  docker-publish:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
