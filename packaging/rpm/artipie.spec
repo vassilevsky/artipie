@@ -1,4 +1,4 @@
-%define artipie_jar target/artipie*.jar
+%define artipie_jar target/artipie-*-jar-with-dependencies.jar
 %define rpm_dir     packaging/rpm
 
 Name:      artipie
