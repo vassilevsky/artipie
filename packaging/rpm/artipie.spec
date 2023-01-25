@@ -2,7 +2,8 @@
 %define rpm_dir     packaging/rpm
 
 Name:      artipie
-Version:   %{getenv:GITHUB_REF_NAME}
+#Version:   %{getenv:GITHUB_REF_NAME}
+Version:   0.28.0
 Release:   1
 BuildArch: noarch
 Summary:   Package repository and cache server
