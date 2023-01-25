@@ -19,6 +19,8 @@ jobs:
       - name: Package to RPM
         run: rpmbuild -bb --build-in-place packaging/rpm/artipie.spec
 
-      - run: rpmlint artipie-*.rpm
+      - run: rpmlint /home/runner/rpmbuild/RPMS/noarch/artipie*.rpm
+
+      - run: yum install -y /home/runner/rpmbuild/RPMS/noarch/artipie*.rpm
 
       - run: repoquery -l artipie
