@@ -1,4 +1,4 @@
-%define artipie_jar artipie-v%{getenv:GITHUB_REF_NAME}-jar-with-dependencies.jar
+%define artipie_jar target/artipie*.jar
 %define rpm_dir     packaging/rpm
 
 Name:      artipie
